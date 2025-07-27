@@ -2,39 +2,118 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Love Meter Sayangg 💗</title>
-  <link href="style.css" rel="stylesheet"/>
-  <audio autoplay loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Love Meter Sayangg~ 💗</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #000;
+      color: white;
+      height: 100%;
+      overflow-y: auto;
+    }
+    .bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -3;
+      opacity: 0.1;
+      filter: blur(2px);
+    }
+    .container {
+      text-align: center;
+      padding: 40px 20px 100px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .heart {
+      font-size: 50px;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .sparkle {
+      font-size: 30px;
+      margin-bottom: 20px;
+      animation: sparkle 2s infinite;
+    }
+    @keyframes sparkle {
+      0% { opacity: 0; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-10px); }
+      100% { opacity: 0; transform: translateY(0); }
+    }
+    .bucin-text {
+      font-size: 18px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 12px;
+      border: none;
+      width: 60%;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      border-radius: 12px;
+      background-color: pink;
+      border: none;
+      cursor: pointer;
+    }
+    .footer {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body>
+  <img src="" class="bg" alt="bg"/>
   <div class="container">
-    <div class="overlay"></div>
-    <img src="kita.jpg" alt="Foto Kita" class="bg"/>
-    <div class="heart">💗</div>
     <div class="sparkle">✨🌈✨</div>
-
-    <h1>Hai Sayangg 💕</h1>
-
-    <p class="bucin-text">
-        Hai sayanggku 💌<br><br>
-        Dari jutaan bintang di langit, aku cuma butuh satu… yaitu kamu, yang selalu bersinar di hatiku 🌟<br><br>
-        Setiap detik bersamamu tuh kayak mimpi yang nggak mau aku bangunin ☁️<br>
-        Kamu bukan cuma pacar… kamu itu rumah, tempat pulang ternyaman dalam hidupku 🏠💖<br><br>
-        Aku suka caramu senyum, caramu ngambek, caramu ngucap 'iyaaayy' tiap aku manja 😳<br>
-        Gak ada hari tanpa kamu di kepala aku... eh, lebih tepatnya di hati aku 🫶<br><br>
-        Makasih ya sayangg udah sabar ngadepin aku yang kadang ngeselin... tapi tulus 😚<br>
-        Hari ini, besok, sampai nanti... aku tetap milih kamu 🤍<br><br>
-        So… seberapa besar cintamu ke aku nih? Uji dengan love meter di bawah yaa~ 💗🔥
-    </p>
-
-    <form>
-      <input type="text" placeholder="Tulis sesuatu untuk aku 💌"/>
-      <button type="submit">Kirim ke Sayangg!</button>
-    </form>
+    <div class="heart">💗</div>
+    <h1>Hai Sayangg~ 😘</h1>
+    <div class="bucin-text">
+      Kamu tahu gak? Tiap detik aku mikirin kamu. 🥺<br>
+      Kamu itu alasanku senyum sendiri kayak orang gila 🤭<br>
+      Aku tuh suka banget liat kamu ketawa 😍<br><br>
+      Kamu itu satu-satunya cewe yang aku mau temenin dari bangun tidur sampe tidur lagi. <br>
+      Bahkan... sampe mimpi pun aku mau bareng kamu. 💤<br><br>
+      Kamu tuh kayak WiFi… kalo gak deket kamu rasanya sinyal cinta aku hilang. 📶💘<br>
+      Pokoknya jangan pernah jauhh yaa dari aku yaa sayangg~ 😚<br><br>
+      Sekarang aku mau tahu dong... Seberapa besar cinta kamu buat aku? 🫣💖
+    </div>
+    <input type="text" id="jawaban" placeholder="Tulis di sini sayangg~">
+    <br>
+    <button onclick="kirim()">Kirim 💌</button>
+    <p id="respon"></p>
+    <div class="footer">Dibuat spesial buat kamu 💕</div>
   </div>
+
+  <script>
+    function kirim() {
+      const val = document.getElementById("jawaban").value;
+      if(val.trim() === "") {
+        document.getElementById("respon").innerText = "Isi dulu dong sayangg 😜";
+      } else {
+        document.getElementById("respon").innerText = "Huaa gemes aku bacanya 😚💗\nJawaban kamu: " + val;
+      }
+    }
+  </script>
 </body>
 </html>
