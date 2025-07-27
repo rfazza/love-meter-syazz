@@ -2,35 +2,40 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Love Meter Sayangg~ 💗</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Meter buat Sayangg 💗</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    html, body {
+    * {
+      box-sizing: border-box;
+    }
+    body {
       margin: 0;
       padding: 0;
-      font-family: 'Comic Sans MS', cursive;
-      background-color: #000;
-      color: white;
-      height: 100%;
-      overflow-y: auto;
-    }
-    .bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -3;
-      opacity: 0.1;
-      filter: blur(2px);
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
     }
     .container {
       text-align: center;
-      padding: 40px 20px 100px;
-      max-width: 700px;
-      margin: 0 auto;
+      padding: 30px;
+    }
+    h1 {
+      font-size: 32px;
+      margin-top: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .sparkle {
+      font-size: 30px;
+      margin: 15px 0;
+      animation: sparkle 2s infinite;
+    }
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-10px); }
     }
     .heart {
       font-size: 50px;
@@ -38,80 +43,90 @@
     }
     @keyframes pulse {
       0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
+      50% { transform: scale(1.3); }
       100% { transform: scale(1); }
     }
-    .sparkle {
-      font-size: 30px;
-      margin-bottom: 20px;
-      animation: sparkle 2s infinite;
-    }
-    @keyframes sparkle {
-      0% { opacity: 0; transform: translateY(0); }
-      50% { opacity: 1; transform: translateY(-10px); }
-      100% { opacity: 0; transform: translateY(0); }
-    }
     .bucin-text {
-      font-size: 18px;
-      background-color: rgba(255, 255, 255, 0.1);
+      font-size: 20px;
+      background-color: rgba(255,255,255,0.2);
       padding: 20px;
-      border-radius: 12px;
-      line-height: 1.6;
-      margin-bottom: 20px;
+      margin: 20px auto;
+      border-radius: 16px;
+      max-width: 600px;
+    }
+    input, button {
+      padding: 12px;
+      font-size: 18px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 10px;
     }
     input {
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 12px;
-      border: none;
       width: 60%;
     }
     button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin-top: 10px;
-      border-radius: 12px;
-      background-color: pink;
-      border: none;
+      background-color: #ff7eb3;
+      color: white;
       cursor: pointer;
     }
-    .footer {
-      font-size: 14px;
-      color: #ccc;
-      margin-top: 60px;
+    .love-bar {
+      width: 0;
+      height: 20px;
+      background: #ff4e50;
+      margin: 20px auto;
+      border-radius: 20px;
+      transition: width 2s ease-in-out;
+    }
+    .love-bar-bg {
+      width: 80%;
+      background: rgba(255,255,255,0.4);
+      border-radius: 20px;
+      margin: 0 auto;
+    }
+    .response {
+      margin-top: 20px;
+      font-size: 22px;
+      color: #fff;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <img src="" class="bg" alt="bg"/>
   <div class="container">
     <div class="sparkle">✨🌈✨</div>
-    <div class="heart">💗</div>
-    <h1>Hai Sayangg~ 😘</h1>
-    <div class="bucin-text">
-      Kamu tahu gak? Tiap detik aku mikirin kamu. 🥺<br>
-      Kamu itu alasanku senyum sendiri kayak orang gila 🤭<br>
-      Aku tuh suka banget liat kamu ketawa 😍<br><br>
-      Kamu itu satu-satunya cewe yang aku mau temenin dari bangun tidur sampe tidur lagi. <br>
-      Bahkan... sampe mimpi pun aku mau bareng kamu. 💤<br><br>
-      Kamu tuh kayak WiFi… kalo gak deket kamu rasanya sinyal cinta aku hilang. 📶💘<br>
-      Pokoknya jangan pernah jauhh yaa dari aku yaa sayangg~ 😚<br><br>
-      Sekarang aku mau tahu dong... Seberapa besar cinta kamu buat aku? 🫣💖
+    <h1>Sayangg 💗</h1>
+    <div class="heart">💓</div>
+    <div class="bucin-text" id="typed-text">
+      Sayangg… Tiap detik aku mikirin kamu… Kaya love meter ini, hatiku full cuma buat kamu. Klik deh, biar kamu ngerasain seberapa cintanya aku ke kamu 💖
     </div>
-    <input type="text" id="jawaban" placeholder="Tulis di sini sayangg~">
-    <br>
-    <button onclick="kirim()">Kirim 💌</button>
-    <p id="respon"></p>
-    <div class="footer">Dibuat spesial buat kamu 💕</div>
+    <div class="love-bar-bg">
+      <div class="love-bar" id="loveBar"></div>
+    </div>
+    <input type="text" id="yourReply" placeholder="Ketik di sini yaa..." />
+    <button onclick="submitReply()">Kirim 💌</button>
+    <div class="response" id="responseBox"></div>
+    <audio autoplay loop hidden>
+      <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+    </audio>
   </div>
-
   <script>
-    function kirim() {
-      const val = document.getElementById("jawaban").value;
-      if(val.trim() === "") {
-        document.getElementById("respon").innerText = "Isi dulu dong sayangg 😜";
+    function submitReply() {
+      const reply = document.getElementById("yourReply").value.toLowerCase();
+      const responseBox = document.getElementById("responseBox");
+      const bar = document.getElementById("loveBar");
+      bar.style.width = "100%";
+
+      if (reply.includes("sayang")) {
+        responseBox.innerHTML = "💌 Awww... aku juga makin sayang kamu, peluk online dulu nih 🤗💕";
+      } else if (reply.includes("cinta")) {
+        responseBox.innerHTML = "💘 AKUUU LEBIH CINTA KAMU SAYANGGG 💗💗💗 Mau peluk rasanya 😭✨💞";
+      } else if (reply.trim() === "") {
+        responseBox.innerHTML = "😜 Ih masa gitu doang? Ulangi lagi dong sayanggg~ tulis yang bikin aku melting!";
       } else {
-        document.getElementById("respon").innerText = "Huaa gemes aku bacanya 😚💗\nJawaban kamu: " + val;
+        responseBox.innerHTML = "💖 Ihh gemes! Kamu itu yaa selalu bisa bikin aku senyum sendiri 😳";
       }
     }
   </script>
