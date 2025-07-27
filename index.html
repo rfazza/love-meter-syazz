@@ -4,121 +4,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Love Meter 💖 untuk Sayangg</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background: url('foto.jpg') center/cover no-repeat fixed;
-      backdrop-filter: blur(3px);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .sparkles {
-      position: absolute;
-      width: 100%; height: 100%;
-      pointer-events: none;
-      background: url('https://i.ibb.co/YtyFcR0/sparkle.gif') repeat;
-      opacity: 0.4;
-    }
-
-    .container {
-      background-color: rgba(255, 255, 255, 0.85);
-      padding: 30px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(255, 0, 144, 0.4);
-      z-index: 2;
-    }
-
-    h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 36px;
-      color: #ff69b4;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 18px;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .love-meter {
-      font-size: 24px;
-      color: red;
-      margin-bottom: 10px;
-    }
-
-    input[type="text"] {
-      padding: 10px;
-      width: 80%;
-      border-radius: 10px;
-      border: 2px solid #ffb6c1;
-      outline: none;
-      margin-bottom: 15px;
-    }
-
-    button {
-      background-color: #ff1493;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-weight: bold;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #ff69b4;
-    }
-
-    #balasan {
-      margin-top: 20px;
-      font-size: 16px;
-      color: #e91e63;
-    }
-  </style>
+  <title>Love Meter Sayangg 💗</title>
+  <link href="style.css" rel="stylesheet"/>
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 </head>
 <body>
-  <div class="sparkles"></div>
-
   <div class="container">
-    <h1>💗 Love Meter 💗</h1>
-    <div class="love-meter">99.9% Cinta dari Aku ke Sayangg! 🥺💘</div>
-    <p>Sayangg, kamu itu alasan aku semangat tiap hari... makasih udah hadir di hidup aku 😚</p>
+    <div class="overlay"></div>
+    <img src="kita.jpg" alt="Foto Kita" class="bg"/>
+    <div class="heart">💗</div>
+    <div class="sparkle">✨🌈✨</div>
 
-    <input type="text" id="pesan" placeholder="Tulis sesuatu buat aku, sayangg...">
-    <br>
-    <button onclick="kirim()">💌 Kirim ke Sayangg 💌</button>
-    <div id="balasan"></div>
+    <h1>Hai Sayangg 💕</h1>
+
+    <p class="bucin-text">
+        Hai sayanggku 💌<br><br>
+        Dari jutaan bintang di langit, aku cuma butuh satu… yaitu kamu, yang selalu bersinar di hatiku 🌟<br><br>
+        Setiap detik bersamamu tuh kayak mimpi yang nggak mau aku bangunin ☁️<br>
+        Kamu bukan cuma pacar… kamu itu rumah, tempat pulang ternyaman dalam hidupku 🏠💖<br><br>
+        Aku suka caramu senyum, caramu ngambek, caramu ngucap 'iyaaayy' tiap aku manja 😳<br>
+        Gak ada hari tanpa kamu di kepala aku... eh, lebih tepatnya di hati aku 🫶<br><br>
+        Makasih ya sayangg udah sabar ngadepin aku yang kadang ngeselin... tapi tulus 😚<br>
+        Hari ini, besok, sampai nanti... aku tetap milih kamu 🤍<br><br>
+        So… seberapa besar cintamu ke aku nih? Uji dengan love meter di bawah yaa~ 💗🔥
+    </p>
+
+    <form>
+      <input type="text" placeholder="Tulis sesuatu untuk aku 💌"/>
+      <button type="submit">Kirim ke Sayangg!</button>
+    </form>
   </div>
-
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/10/29/audio_438d8fd9df.mp3?filename=love-you-122697.mp3" type="audio/mp3">
-  </audio>
-
-  <script>
-    function kirim() {
-      const pesan = document.getElementById("pesan").value;
-      const balasan = document.getElementById("balasan");
-      if (pesan.trim()) {
-        balasan.innerHTML = `🥹 Duhh makasih ya sayangg kamu ngetik: "<b>${pesan}</b>" 💞`;
-      } else {
-        balasan.innerHTML = `😢 Ehhh kok belum ngetik apa-apa nih sayangg...`;
-      }
-    }
-  </script>
 </body>
 </html>
