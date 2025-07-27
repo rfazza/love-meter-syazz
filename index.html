@@ -1,86 +1,124 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Love Meter by Syazz</title>
+  <title>Love Meter 💖 untuk Sayangg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Courier New', monospace;
-      background: url('IMG-20250611-WA0027.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
+      background: url('foto.jpg') center/cover no-repeat fixed;
+      backdrop-filter: blur(3px);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
       overflow: hidden;
     }
 
-    .overlay {
-      background: rgba(0, 0, 0, 0.5);
+    .sparkles {
       position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      background: url('https://i.ibb.co/YtyFcR0/sparkle.gif') repeat;
+      opacity: 0.4;
     }
 
     .container {
-      position: relative;
-      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 20px;
       text-align: center;
-      top: 50%;
-      transform: translateY(-50%);
-      animation: sparkle 5s infinite;
+      box-shadow: 0 0 20px rgba(255, 0, 144, 0.4);
+      z-index: 2;
     }
 
     h1 {
-      font-size: 3em;
-      margin: 0.5em 0;
-      animation: fadeIn 2s ease-in;
-    }
-
-    .heart {
-      font-size: 4em;
-      animation: pulse 1.5s infinite;
+      font-family: 'Pacifico', cursive;
+      font-size: 36px;
+      color: #ff69b4;
+      margin-bottom: 10px;
     }
 
     p {
-      font-size: 1.3em;
-      margin-top: 1em;
-      padding: 0 20px;
-      animation: fadeIn 3s ease-in;
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #333;
     }
 
-    @keyframes pulse {
-      0% { transform: scale(1); color: pink; }
-      50% { transform: scale(1.2); color: #ff69b4; }
-      100% { transform: scale(1); color: pink; }
+    .love-meter {
+      font-size: 24px;
+      color: red;
+      margin-bottom: 10px;
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+    input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      border-radius: 10px;
+      border: 2px solid #ffb6c1;
+      outline: none;
+      margin-bottom: 15px;
     }
 
-    @keyframes sparkle {
-      0% { text-shadow: 0 0 10px #fff; }
-      50% { text-shadow: 0 0 20px #ff69b4, 0 0 30px #fff; }
-      100% { text-shadow: 0 0 10px #fff; }
+    button {
+      background-color: #ff1493;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff69b4;
+    }
+
+    #balasan {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #e91e63;
     }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
+  <div class="sparkles"></div>
+
   <div class="container">
-    <div class="heart">💗</div>
-    <h1>Hai sayangg 🌈</h1>
-    <p>
-      Kamu tahu nggak? Dari sekian miliar orang di dunia ini, aku cuma butuh satu: kamu.  
-      Karena kamu adalah alasanku tersenyum tiap hari.  
-      Tetap jadi cewek manis yang aku sayangi yaa...  
-      Love u more than yesterday 💘
-    </p>
+    <h1>💗 Love Meter 💗</h1>
+    <div class="love-meter">99.9% Cinta dari Aku ke Sayangg! 🥺💘</div>
+    <p>Sayangg, kamu itu alasan aku semangat tiap hari... makasih udah hadir di hidup aku 😚</p>
+
+    <input type="text" id="pesan" placeholder="Tulis sesuatu buat aku, sayangg...">
+    <br>
+    <button onclick="kirim()">💌 Kirim ke Sayangg 💌</button>
+    <div id="balasan"></div>
   </div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/10/29/audio_438d8fd9df.mp3?filename=love-you-122697.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    function kirim() {
+      const pesan = document.getElementById("pesan").value;
+      const balasan = document.getElementById("balasan");
+      if (pesan.trim()) {
+        balasan.innerHTML = `🥹 Duhh makasih ya sayangg kamu ngetik: "<b>${pesan}</b>" 💞`;
+      } else {
+        balasan.innerHTML = `😢 Ehhh kok belum ngetik apa-apa nih sayangg...`;
+      }
+    }
+  </script>
 </body>
 </html>
